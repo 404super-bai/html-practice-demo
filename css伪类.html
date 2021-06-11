@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>CSS 伪类</title>
+		<style>
+			hr {
+				margin: 20px 0;
+			}
+
+			input {
+				padding: 10px 20px;
+				box-sizing: border-box;
+				border-radius: 25px;
+			}
+
+			input:required {
+				border: 1px solid red;
+			}
+
+			input:valid {
+				border: 1px solid green;
+			}
+
+			input:invalid {
+				border: 1px solid red;
+			}
+
+
+			.t-collapse .collapse-body {
+				display: none;
+			}
+
+			.t-collapse .collapse-body:target {
+				display: block;
+			}
+
+			.p-box p:nth-of-type(2) {
+				background-color: lightblue;
+			}
+
+			.p-box p:nth-child(2) {
+				background-color: lightgreen;
+			}
+
+			.p1::selection {
+				background-color: lightblue;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div>
+			<h5>1、类型为email的校验</h5>
+
+			<p>符合email校验规则</p>
+			<input type="email" required placeholder="请输入" value="demo@qq.com" />
+			<br><br>
+
+			<p>不符合email校验规则</p>
+			<input type="email" required placeholder="请输入" value="lalala" />
+			<br><br>
+
+			<p>有required标识，但未填写</p>
+			<input type="email" required placeholder="请输入" value="" />
+		</div>
+		<hr>
+
+		
+		<div class="t-collapse">
+			<h5>2、  :target 折叠面板</h5>
+			<a class="collapse-target" href="#target2">target 1</a>
+			<div class="collapse-body" id="target2">
+				<a class="collapse-close" href="#">target 1</a>
+				<p>...</p>
+			</div>
+		</div>
+		<hr>
+
+		<div class="p-box">
+			<h5>3、元素的index</h5>
+			<p>第一个段落。</p>
+			<p>第二个段落。</p>
+			<p>第三个段落。</p>
+			<p>第四个段落。</p>
+			<p>第五个段落。</p>
+		</div>
+
+		<div>
+			<h5>4、美化选中的文本</h5>
+			<p class="p1">Custom text selection color</p>
+		</div>
+		
+		<div>
+			<h5>5、用伪类画对话框</h5>
+			<div class="chat"></div>
+		</div>
+	</body>
+</html>
